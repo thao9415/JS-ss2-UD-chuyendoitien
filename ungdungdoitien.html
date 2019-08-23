@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>AMOUNT</h2>
+<input type="text" id="amount"><br>
+<h2>FROM CURRENCY</h2>
+<select id="select1">
+    <option value="vnd">Việt Nam</option>
+    <option value="usd">USD</option>
+</select><br>
+<h2>TO CURRENCY</h2>
+<select id="select2">
+    <option value="usd">USD</option>
+    <option value="vnd">Việt Nam</option>
+</select>
+<button type="button"value=""onclick="doi_tien()"id="doitien">Đổi tiền</button>
+<p id="result"></p>
+
+<script>
+function doi_tien() {
+    let select1=document.getElementById("select1").value;
+    let select2=document.getElementById("select2").value;
+    let amount=parseInt(document.getElementById("amount").value);
+    let ketqua;
+
+
+    if(select1 ===select2){
+        ketqua =amount;
+       }else
+           if(select1 === "vnd" && select2 === "usd" ){
+        ketqua =amount/23000;
+    }else {
+        ketqua=amount*23000;
+
+    }
+        document.write("So tien da doi la "+ketqua);
+}
+</script>
+</body>
+</html>
